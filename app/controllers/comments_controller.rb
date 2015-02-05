@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
       flash[:success] = 'Comment successfully created.'
       redirect_to article_comments_path(@article)
     else
-      render :new
+      render :new, article_id: @article.id
     end
   end
 

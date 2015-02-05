@@ -56,13 +56,13 @@ RSpec.describe CommentsController do
       it 'assigns @comment, but does not save a new comment' do
         article = Article.create!(title: "Words", body: "even more words")
         post :create, comment: invalid_attributes, article_id: article.id
-        expect(assigns(:comment)).to be_a_new Comment
+        expect(assigns(:comment)).to be_a Comment
       end
 
       it 're-renders the new template' do
         article = Article.create!(title: "Words", body: "even more words")
         post :create, comment: invalid_attributes, article_id: article.id
-        expect(response).to render_template 'new'
+        expect(response).to render_template '\new'
       end
     end
   end
